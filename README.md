@@ -1,4 +1,4 @@
-### Neighborjoining_phylogenetic_tree
+### Neighbor-joining phylogenetic tree
 
 ```r
 # 1) install.packages(c("tidyverse","ape","phangorn","proxy","parallelDist"))
@@ -10,7 +10,7 @@ library(parallelDist)
 ```
 ```r
 # 2) upload the markers_data.csv file
-dos <- read_csv("markers_data.csv", col_types = cols(.default = "c"))
+dos <- read_csv("markers_data.csv", col_types = cols(.default = "c")) # makers_data.csv is attached in the repository
 ```
 
 ```r
@@ -20,7 +20,7 @@ dm_euc <- as.dist(proxy::dist(
   method   = "Euclidean",
   pairwise = TRUE    # ignores any NAs
 ))
-# for neighbor joining tree
+# for neighbor-joining tree
 nj_euc <- NJ(dm_euc)
 nj_mid <- midpoint(nj_euc)  # midpoint‐root for symmetry
 
